@@ -10,8 +10,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import os
-import matplotlib
-matplotlib.use('TkAgg')  # 또는 Qt5Agg
+# import matplotlib
+# matplotlib.use('TkAgg')  # 또는 Qt5Agg
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import seaborn as sns
@@ -32,8 +32,7 @@ contigency_mat_df= pd.read_csv('./data/contigency_matrix.csv')
 # Load the array
 distance_matrix = np.loadtxt('./data/distance_matrix.csv', delimiter=',')
 
-st.title('직업각인과 공통각인 매트릭스')
-
+st.title('유효각인 대시보드')
 
 # Sidebar for page selection
 page = st.sidebar.radio("페이지를 선택하시오:", ["직업별 유효 공통각인", "공통각인별 유효 직업각인", "직업각인 맵"])
@@ -72,7 +71,7 @@ if page == "직업별 유효 공통각인":
     st.plotly_chart(fig)
 
 
-elif page == "공통각인별 유효직업":
+elif page == "공통각인별 유효 직업각인":
     st.header("공통각인별 유효직업 보기")
     
     # Common engraving selection
