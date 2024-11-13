@@ -16,7 +16,6 @@ import plotly.express as px
 df = pd.read_csv('D:/github/lostark/241113_seal_preprocessed.csv')
 
 st.title('직업각인 별 주요 공통각인 목록')
-#%%
 
 # Sidebar for page selection
 page = st.sidebar.radio("페이지를 선택하시오:", ["직업별 각인", "공통각인별 유효직업"])
