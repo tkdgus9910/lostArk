@@ -83,7 +83,8 @@ if page == "직업별 유효 공통각인":
         color="공통각인_구분",
         title="Bar Chart with Categories and Legend",
         barmode="group",
-        template="plotly_white"
+        template="plotly_white",
+        text="공통각인 비중"  # Display Y values on top of the bars
     )
     
     # Update layout for better visibility, spacing, and size
@@ -139,7 +140,8 @@ elif page == "공통각인별 유효 직업각인":
         color="공통각인_구분",
         title="Bar Chart with Categories and Legend",
         barmode="group",
-        template="plotly_white"
+        template="plotly_white",
+        text="공통각인 비중"  # Display Y values on top of the bars
     )
     
     # Update layout for better visibility, spacing, and size
