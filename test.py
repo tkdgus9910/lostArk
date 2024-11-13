@@ -72,7 +72,7 @@ def update_layout_template() :
         yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis settings
         legend=dict(font=dict(size=16)),  # Legend font size
         bargap=0.4,  # Adjust bar spacing for wider gaps
-        width=1200,  # Set the width of the figure
+        width=1600,  # Set the width of the figure
         height=600  # Set the height of the figure
     )
     
