@@ -56,7 +56,42 @@ st.title('유효각인 대시보드')
 # Sidebar for page selection
 page = st.sidebar.radio("페이지를 선택하시오:", ["직업별 유효 공통각인", "공통각인별 유효 직업각인", "직업각인 맵"])
 
+#%%
 
+def update_layout_template() :
+    
+    # Update layout for better visibility, spacing, and size
+    fig.update_layout(
+        title=dict(font=dict(size=24)),  # Title font size
+        xaxis=dict(
+            title=dict(font=dict(size=18)),  # X-axis label font size
+            tickfont=dict(size=10),  # X-axis tick font size
+            tickangle=-45,  # Rotate tick labels for better fit
+            tickmode="linear"  # Show all X-axis values
+        ),
+        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis settings
+        legend=dict(font=dict(size=16)),  # Legend font size
+        bargap=0.4,  # Adjust bar spacing for wider gaps
+        width=1200,  # Set the width of the figure
+        height=400  # Set the height of the figure
+    )
+    
+    # Manually adjust X-axis tick spacing and widen categories
+    fig.update_xaxes(
+        categoryorder="array",  # Ensure order of categories
+        ticklabelposition="outside"  # Move labels outside for clarity
+    )
+    
+        # Update bar text position and formatting
+    fig.update_traces(
+        textposition="outside",  # Place text above the bars
+        texttemplate="%{text:.1f}",  # Format text as a float with 2 decimal places
+        textfont=dict(size=32)  # Adjust text font size
+    )
+    
+    
+
+#%%
 if page == "직업별 유효 공통각인":
     st.header("직업별 각인 보기")
     
@@ -87,34 +122,7 @@ if page == "직업별 유효 공통각인":
         text="공통각인 비중"  # Display Y values on top of the bars
     )
     
-    # Update layout for better visibility, spacing, and size
-    fig.update_layout(
-        title=dict(font=dict(size=24)),  # Title font size
-        xaxis=dict(
-            title=dict(font=dict(size=18)),  # X-axis label font size
-            tickfont=dict(size=10),  # X-axis tick font size
-            tickangle=-45,  # Rotate tick labels for better fit
-            tickmode="linear"  # Show all X-axis values
-        ),
-        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis settings
-        legend=dict(font=dict(size=16)),  # Legend font size
-        bargap=0.4,  # Adjust bar spacing for wider gaps
-        width=800,  # Set the width of the figure
-        height=600  # Set the height of the figure
-    )
-    
-    # Manually adjust X-axis tick spacing and widen categories
-    fig.update_xaxes(
-        categoryorder="array",  # Ensure order of categories
-        ticklabelposition="outside"  # Move labels outside for clarity
-    )
-    
-        # Update bar text position and formatting
-    fig.update_traces(
-        textposition="outside",  # Place text above the bars
-        texttemplate="%{text:.1f}",  # Format text as a float with 2 decimal places
-        textfont=dict(size=32)  # Adjust text font size
-    )
+    update_layout_template()
     
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
@@ -141,38 +149,9 @@ elif page == "공통각인별 유효 직업각인":
         text="공통각인 비중"  # Display Y values on top of the bars
     )
     
-    # Update layout for better visibility, spacing, and size
-    fig.update_layout(
-        title=dict(font=dict(size=24)),  # Title font size
-        xaxis=dict(
-            title=dict(font=dict(size=18)),  # X-axis label font size
-            tickfont=dict(size=10),  # X-axis tick font size
-            tickangle=-45,  # Rotate tick labels for better fit
-            tickmode="linear"  # Show all X-axis values
-        ),
-        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis settings
-        legend=dict(font=dict(size=16)),  # Legend font size
-        bargap=0.4,  # Adjust bar spacing for wider gaps
-        width=800,  # Set the width of the figure
-        height=600  # Set the height of the figure
-    )
+    update_layout_template()
     
-    # Manually adjust X-axis tick spacing and widen categories
-    fig.update_xaxes(
-        categoryorder="array",  # Ensure order of categories
-        ticklabelposition="outside"  # Move labels outside for clarity
-    )
-    
-        # Update bar text position and formatting
-    fig.update_traces(
-        textposition="outside",  # Place text above the bars
-        texttemplate="%{text:.1f}",  # Format text as a float with 2 decimal places
-        textfont=dict(size=32)  # Adjust text font size
-    )
 
-
-
-    
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
 #%%
