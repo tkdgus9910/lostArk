@@ -65,7 +65,7 @@ def update_layout_template() :
         title=dict(font=dict(size=24)),  # Title font size
         xaxis=dict(
             title=dict(font=dict(size=18)),  # X-axis label font size
-            tickfont=dict(size=14),  # X-axis tick font size
+            tickfont=dict(size=12),  # X-axis tick font size
             tickangle=-90,  # Rotate tick labels for better fit
             tickmode="linear"  # Show all X-axis values
         ),
