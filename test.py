@@ -29,12 +29,6 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 # Change the working directory to the script's directory
 os.chdir(script_directory)
 
-# 폰트 설정
-font_path = './NanumGothic.ttf'
-fontprop = fm.FontProperties(fname=font_path)
-plt.rc('font', family=fontprop.get_name())
-
-
 # Load data
 df = pd.read_csv('./data/241113_seal_preprocessed.csv')
 contigency_mat_df= pd.read_csv('./data/contigency_matrix.csv')
