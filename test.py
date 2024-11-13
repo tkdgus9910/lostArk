@@ -11,7 +11,8 @@ import pandas as pd
 import plotly.express as px
 
 # Load sample data
-df = pd.read_csv('D:/github/lostark/241113_seal_preprocessed.csv')
+# df = pd.read_csv('D:/github/lostark/241113_seal_preprocessed.csv')
+df = pd.read_csv('./241113_seal_preprocessed.csv')
 
 st.title('직업각인 별 주요 공통각인 목록')
 
