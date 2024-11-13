@@ -21,7 +21,7 @@ from adjustText import adjust_text  # 겹치는 텍스트 처리 라이브러리
 
 
 # 한글 폰트 설정 (Windows: 'Malgun Gothic', macOS: 'AppleGothic', Linux: 'NanumGothic')
-rc('font', family='Malgun Gothic')  # 'AppleGothic' 또는 'NanumGothic'으로 변경 가능
+rc('font', family='NanumGothic')  # 'AppleGothic' 또는 'NanumGothic'으로 변경 가능
 plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
 
 # Get the directory of the current script
