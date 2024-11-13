@@ -10,8 +10,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import os
-# import matplotlib
-# matplotlib.use('TkAgg')  # 또는 Qt5Agg
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import seaborn as sns
@@ -114,26 +114,35 @@ elif page == "직업각인 맵":
     palette = sns.color_palette(n_colors=len(groups))
     group_colors = dict(zip(groups, palette))
 
+        
     # 산점도 시각화
-    plt.figure(figsize=(10, 10))
-    ax = plt.gca()
-    sns.scatterplot(x='Dimension 1', y='Dimension 2', data=df_coords, hue='Group_color', palette=palette, s=100, ax=ax)
-    plt.title('MDS Plot of Distance Matrix with Group Labels', fontsize=16)
-    plt.xlabel('Dimension 1')
-    plt.ylabel('Dimension 2')
-    plt.grid(True, linestyle='--', alpha=0.7)  # 격자 추가
-
+    fig, ax = plt.subplots(figsize=(10, 10))
+    sns.scatterplot(
+        x='Dimension 1', y='Dimension 2', data=df_coords,
+        hue='Group_color', palette=palette, s=100, ax=ax
+    )
+    ax.set_title('MDS Plot of Distance Matrix with Group Labels', fontsize=16)
+    ax.set_xlabel('Dimension 1')
+    ax.set_ylabel('Dimension 2')
+    ax.grid(True, linestyle='--', alpha=0.7)  # 격자 추가
+    
     # 포인트 위에 그룹 레이블 표시 (adjustText 사용)
     texts = []
     for i, row in df_coords.iterrows():
-        texts.append(plt.text(row['Dimension 1'], row['Dimension 2'], row['Group'],
-                              fontsize=10, color='black', weight='bold'))
-
+        texts.append(
+            ax.text(
+                row['Dimension 1'], row['Dimension 2'], row['Group'],
+                fontsize=10, color='black', weight='bold'
+            )
+        )
+    
     # 텍스트 위치 자동 조정
-    adjust_text(texts, arrowprops=dict(arrowstyle='->', color='gray', lw=0.5))
-
-    plt.legend([], [], frameon=False)  # 범례 제거
+    adjust_text(texts, ax=ax, arrowprops=dict(arrowstyle='->', color='gray', lw=0.5))
+    
+    ax.legend([], [], frameon=False)  # 범례 제거
     plt.tight_layout()
-    plt.show()
+    
+    # Streamlit을 사용하여 그래프 표시
+    st.pyplot(fig)
 
 # pip list --format=freeze > requirements.txt
