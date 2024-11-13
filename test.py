@@ -12,17 +12,28 @@ import plotly.express as px
 import os
 import matplotlib
 matplotlib.use("Agg")
+
+import matplotlib.font_manager as fm
+
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import seaborn as sns
 import numpy as np
 from matplotlib import rc
 from adjustText import adjust_text  # 겹치는 텍스트 처리 라이브러리
+import requests
 
+# 폰트 다운로드
+url = 'https://github.com/naver/nanumfont/blob/master/TTF/NanumGothic.ttf?raw=true'
+response = requests.get(url)
+font_path = 'NanumGothic.ttf'
+with open(font_path, 'wb') as f:
+    f.write(response.content)
 
-# 한글 폰트 설정 (Windows: 'Malgun Gothic', macOS: 'AppleGothic', Linux: 'NanumGothic')
-rc('font', family='NanumGothic')  # 'AppleGothic' 또는 'NanumGothic'으로 변경 가능
-plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
+# 폰트 등록
+fontprop = fm.FontProperties(fname=font_path)
+plt.rc('font', family=fontprop.get_name())
+
 
 # Get the directory of the current script
 script_directory = os.path.dirname(os.path.abspath(__file__))
