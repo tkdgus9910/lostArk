@@ -112,12 +112,9 @@ if page == "직업별 유효 공통각인":
         # Update bar text position and formatting
     fig.update_traces(
         textposition="outside",  # Place text above the bars
-        texttemplate="%{text:.2f}",  # Format text as a float with 2 decimal places
-        textfont=dict(size=14)  # Adjust text font size
+        texttemplate="%{text:.1f}",  # Format text as a float with 2 decimal places
+        textfont=dict(size=18)  # Adjust text font size
     )
-
-
-
     
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
@@ -169,8 +166,8 @@ elif page == "공통각인별 유효 직업각인":
         # Update bar text position and formatting
     fig.update_traces(
         textposition="outside",  # Place text above the bars
-        texttemplate="%{text:.2f}",  # Format text as a float with 2 decimal places
-        textfont=dict(size=14)  # Adjust text font size
+        texttemplate="%{text:.1f}",  # Format text as a float with 2 decimal places
+        textfont=dict(size=18)  # Adjust text font size
     )
 
 
