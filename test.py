@@ -29,6 +29,21 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 # Change the working directory to the script's directory
 os.chdir(script_directory)
 
+#%%
+
+from matplotlib import font_manager
+
+# Specify the path to your font files
+font_dirs = ['./fonts/']  # Replace with your font directory
+font_files = font_manager.findSystemFonts(fontpaths=font_dirs)
+for font_file in font_files:
+    font_manager.fontManager.addfont(font_file)
+font_family = font_manager.FontProperties(fname=font_files[0]).get_name()
+plt.rcParams['font.family'] = font_family
+
+
+#%%
+
 # Load data
 df = pd.read_csv('./data/241113_seal_preprocessed.csv')
 contigency_mat_df= pd.read_csv('./data/contigency_matrix.csv')
