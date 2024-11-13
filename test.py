@@ -95,10 +95,6 @@ elif page == "공통각인별 유효 직업각인":
     st.plotly_chart(fig)
 
 elif page == "직업각인 맵":
-    
-    # 한글 폰트 설정
-    rc('font', family='Malgun Gothic')  # Windows의 경우 'Malgun Gothic', macOS는 'AppleGothic'
-    plt.rcParams['axes.unicode_minus'] = False  # 한글 폰트 설정 시, 마이너스 기호 깨짐 방지
 
     # MDS를 사용하여 2차원으로 축소
     mds = TSNE(n_components=2, metric='precomputed', random_state=42, init = "random")
