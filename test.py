@@ -85,6 +85,14 @@ if page == "직업별 유효 공통각인":
         barmode="group",
         template="plotly_white"
     )
+        # Update layout for better visibility
+    fig.update_layout(
+        title=dict(font=dict(size=24)),  # Title font size
+        xaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # X-axis label and tick font size
+        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis label and tick font size
+        legend=dict(font=dict(size=16))  # Legend font size
+    )
+
     
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
@@ -109,6 +117,15 @@ elif page == "공통각인별 유효 직업각인":
         barmode="group",
         template="plotly_white"
     )
+    
+    # Update layout for better visibility
+    fig.update_layout(
+    title=dict(font=dict(size=24)),  # Title font size
+    xaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # X-axis label and tick font size
+    yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis label and tick font size
+    legend=dict(font=dict(size=16))  # Legend font size
+    )
+
     
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
