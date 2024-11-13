@@ -113,12 +113,12 @@ if page == "직업별 유효 공통각인":
     fig.update_traces(
         textposition="outside",  # Place text above the bars
         texttemplate="%{text:.1f}",  # Format text as a float with 2 decimal places
-        textfont=dict(size=18)  # Adjust text font size
+        textfont=dict(size=24)  # Adjust text font size
     )
     
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
-
+#%%
 
 elif page == "공통각인별 유효 직업각인":
     st.header("공통각인별 유효직업 보기")
@@ -175,7 +175,7 @@ elif page == "공통각인별 유효 직업각인":
     
     # Streamlit에서 차트 표시
     st.plotly_chart(fig)
-
+#%%
 elif page == "직업각인 맵":
 
     # MDS를 사용하여 2차원으로 축소
