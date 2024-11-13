@@ -90,8 +90,8 @@ if page == "직업별 유효 공통각인":
     fig.update_layout(
         title=dict(font=dict(size=24)),  # Title font size
         xaxis=dict(
-            title=dict(font=dict(size=12)),  # X-axis label font size
-            tickfont=dict(size=14),  # X-axis tick font size
+            title=dict(font=dict(size=18)),  # X-axis label font size
+            tickfont=dict(size=10),  # X-axis tick font size
             tickangle=-45,  # Rotate tick labels for better fit
             tickmode="linear"  # Show all X-axis values
         ),
@@ -138,8 +138,8 @@ elif page == "공통각인별 유효 직업각인":
     fig.update_layout(
         title=dict(font=dict(size=24)),  # Title font size
         xaxis=dict(
-            title=dict(font=dict(size=12)),  # X-axis label font size
-            tickfont=dict(size=14),  # X-axis tick font size
+            title=dict(font=dict(size=18)),  # X-axis label font size
+            tickfont=dict(size=10),  # X-axis tick font size
             tickangle=-45,  # Rotate tick labels for better fit
             tickmode="linear"  # Show all X-axis values
         ),
