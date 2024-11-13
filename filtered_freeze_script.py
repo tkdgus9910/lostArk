@@ -8,7 +8,7 @@ Created on Wed Nov 13 14:48:37 2024
 import os
 
 input_file = "requirements.txt"
-output_file = "requirements.txt"
+output_file = "requirements_after.txt"
 
 exclude_keywords = ["win32", "mkl"]
 

@@ -9,7 +9,7 @@ Created on Wed Nov 13 13:51:07 2024
 import pandas as pd
 from sklearn.metrics import pairwise_distances
 import numpy as np
-data = pd.read_csv('D:/github/lostark/241113_seal_preprocessed.csv')
+data = pd.read_csv('D:/github/lostark/data/241113_seal_preprocessed.csv')
 
 result = data.groupby(['직업','직업각인','공통각인'])['공통각인 비중'].sum().unstack(fill_value=0)
 
@@ -19,8 +19,8 @@ distance_matrix = pairwise_distances(array, metric='euclidean')
 result = result.reset_index()
 
 #%%
-result.to_csv('D:/github/lostark/contigency_matrix.csv', index = 0)
-np.savetxt('D:/github/lostark/distance_matrix.csv', distance_matrix, delimiter=',')
+result.to_csv('D:/github/lostark/data/contigency_matrix.csv', index = 0)
+np.savetxt('D:/github/lostark/data/distance_matrix.csv', distance_matrix, delimiter=',')
 
 #%% 시각화 mds
 import matplotlib
