@@ -85,12 +85,25 @@ if page == "직업별 유효 공통각인":
         barmode="group",
         template="plotly_white"
     )
-        # Update layout for better visibility
+    
+    # Update layout for better visibility and spacing
     fig.update_layout(
         title=dict(font=dict(size=24)),  # Title font size
-        xaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # X-axis label and tick font size
-        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis label and tick font size
-        legend=dict(font=dict(size=16))  # Legend font size
+        xaxis=dict(
+            title=dict(font=dict(size=18)),  # X-axis label font size
+            tickfont=dict(size=14),  # X-axis tick font size
+            tickangle=-45,  # Rotate tick labels for better fit
+            tickmode="linear"  # Show all X-axis values
+        ),
+        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis settings
+        legend=dict(font=dict(size=16)),  # Legend font size
+        bargap=0.4  # Adjust bar spacing for wider gaps
+    )
+    
+    # Manually adjust X-axis tick spacing and widen categories
+    fig.update_xaxes(
+        categoryorder="array",  # Ensure order of categories
+        ticklabelposition="outside"  # Move labels outside for clarity
     )
 
     
@@ -118,12 +131,24 @@ elif page == "공통각인별 유효 직업각인":
         template="plotly_white"
     )
     
-    # Update layout for better visibility
+    # Update layout for better visibility and spacing
     fig.update_layout(
-    title=dict(font=dict(size=24)),  # Title font size
-    xaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # X-axis label and tick font size
-    yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis label and tick font size
-    legend=dict(font=dict(size=16))  # Legend font size
+        title=dict(font=dict(size=24)),  # Title font size
+        xaxis=dict(
+            title=dict(font=dict(size=18)),  # X-axis label font size
+            tickfont=dict(size=14),  # X-axis tick font size
+            tickangle=-45,  # Rotate tick labels for better fit
+            tickmode="linear"  # Show all X-axis values
+        ),
+        yaxis=dict(title=dict(font=dict(size=18)), tickfont=dict(size=14)),  # Y-axis settings
+        legend=dict(font=dict(size=16)),  # Legend font size
+        bargap=0.4  # Adjust bar spacing for wider gaps
+    )
+    
+    # Manually adjust X-axis tick spacing and widen categories
+    fig.update_xaxes(
+        categoryorder="array",  # Ensure order of categories
+        ticklabelposition="outside"  # Move labels outside for clarity
     )
 
     
