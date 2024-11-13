@@ -30,5 +30,8 @@ for job in set(result_df['직업각인']) :
     
 
 result_df_ = result_df_.loc[result_df_['공통각인_구분'] != '제외',:].reset_index(drop = 1)
+result_df_ = result_df_.loc[result_df_['직업각인'] != '없음',:].reset_index(drop = 1)
+result_df_ = result_df_.loc[result_df_['공통각인'] != '승부사',:].reset_index(drop = 1)
+result_df_ = result_df_.loc[result_df_['공통각인'] != '선수필승',:].reset_index(drop = 1)
 
 result_df_.to_csv('D:/github/lostark/241113_seal_preprocessed.csv', index = 0)
